@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title> Lab04 CPS530 </title>
+	<script>
+		function reverseString(str) {
+   			 return str.split("").reverse().join("");
+		}
+
+
+		function palindrome(){
+			let str = document.getElementById("palind").value;
+			str =str.toLowerCase(); 
+			str = str.replaceAll(' ', ''); 
+    			str = str.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, ''); // Removes special characters
+
+			console.log(str);
+			if(reverseString(str) == str){
+				alert("palindrome");
+			}else{
+				alert("not palindrome");
+			}
+		}
+	</script>
+
+	<style>
+    h2#first_tag {
+      font-family: "Edu AU VIC WA NT Guides", cursive;
+      font-weight: 700;
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    .header {
+      background-color: #9933cc;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+   footer {
+      padding: 10px;
+      background-color: #f1f1f1;
+      text-align: center;
+      margin-top: 20px;
+    }
+</style>
+</head>
+
+<body> 
+
+  <div class="container mt-4">
+
+  <div class="header text-center">
+    <h2 id="first_tag">Lab04 CPS530 - Millie </h2>
+  </div>
+	<br>
+	<h2> Q1: View Bookmarks </h2> 
+	<div id="bookms" name="bookms">
+	</div> <br><br>
+	<form> 
+		<h2>Q2: Palindrome Testing</h2> 
+		<label for="palind" >Enter the string you want to do the palindrome test on... </label>
+		<input type="text" id="palind" name="palind"><br>
+		<button onclick="palindrome()">Check</button>
+	</form>
+</div><br><br><br><br>
+
+  <footer>
+    <span id="copyright">Copyright Millie Majithia | mmajithia@torontomu.ca</span>
+  </footer>
+</body> 
+
+	<script>
+		function bookmarks(){
+			let bookmarks = ["https://google.ca", "http://www.WAVGroup.com"]; 
+			document.getElementById("bookms").innerHTML+= "<ul>";
+			for(let i=0; i<bookmarks.length; i++){
+				if(bookmarks[i].includes("https")){
+					document.getElementById("bookms").innerHTML += "<li style='display:inline'><a href="+"'"+bookmarks[i] +"'" + " target='_blank'>"+"<p><img src='greenpadlock.png' width='20px' height='20px'>"+ bookmarks[i] + " </p></a></li>";
+					//document.write("<p><img src='greenpadlock.png' width='20px' height='20px'>"+bookmarks[i] +"</p>"); 
+				}else{
+					document.getElementById("bookms").innerHTML += "<li style='display:inline'><a href="+"'"+bookmarks[i] +"'" + " target='_blank'>"+"<p><img src='redpadlock.png' width='20px' height='20px'>"+ bookmarks[i] + " </p></a></li>";
+
+					//document.write("<p><img src='redpadlock.png' width='20px' height='20px'>"+bookmarks[i] +"</p>"); 
+
+				}
+			}
+			document.getElementById("bookms").innerHTML+="</ul>"; 
+}
+
+
+		
+bookmarks();
+
+	</script>
+
+
+</html>

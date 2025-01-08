@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250">
+<rect x="10" y="30" style="width:250px; height:50px; fill:#000000;"/>
+<rect x="10" y="80" style="width:250px; height:50px; fill:#424242;"/>
+<rect x="10" y="130" style="width:250px; height:50px; fill:#898989;"/>
+<rect x="10" y="180" style="width:250px; height:50px; fill:#cdcdcd;"/>
+
+</svg>

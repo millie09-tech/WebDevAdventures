@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#zoompng").hide();
+
+/**QUESTION 2: Create a second function that counts only the letters (A-Z and a-z) and display that count as well next to the input form.**/
+            function question2_az() {
+                const az = '[A-Za-z]';
+                let qval = $("#qcount").val();
+                let c = 0;
+                for (let i = 0; i < qval.length; i++) {
+                    if (qval[i].match(az)) {
+                        c++;
+                    }
+                }
+                document.getElementById("azcount").innerHTML = c;
+            }
+
+/**QUESTION 2: Write a JavaScript function that counts in real time the number of characters in a <textarea> form element.**/
+
+            function question2_length() {
+                let qval = $("#qcount").val();
+                document.getElementById("charcount").innerHTML = qval.length;
+            }
+
+/**QUESTION 2: Have the number updated in real time and shown in large font next to the input form element. **/
+            $("#qcount").on("input", function() {
+                question2_az();
+                question2_length();
+            });
+
+/**QUESTION3: When zoom out is clicked, it goes back to its original size (animated too) **/
+
+            $('#zoompng').click(function () {
+                // Reset image to original size
+                $('#q3image').animate({
+                    width: '100px', // Original width
+                    height: '100px' // Original height
+                }, 2000, function() {
+                    $('#zoompng').hide(); // Hide zoom icon
+                    $('body').css('overflow', 'auto'); // Enable scrolling again
+                });
+            });
+
+/**QUESTION3: When image is clicked, it expands to full screen and animates **/
+            $('#q3image').click(function () {
+                var fullWidth = $(window).width();
+                var fullHeight = $(window).height();
+
+                // Animate to fill the screen smoothly
+                $('#q3image').animate({
+                    width: "100vw",
+                    height: "100vh"
+                }, 2000, function() {
+                    // Show the zoom icon after the image has zoomed in
+                    $("#zoompng").show();
+                    $('body').css('overflow', 'hidden'); // Disable scrolling so that it takes up full page
+                });
+            });
+        });
+
+/** QUESTION 1 Validation:  Write a JavaScript function to validate the form items name and phone number (a name cannot have anything but letters and the phone number must be exactly as shown: 3 digits in parentheses, followed by 3 digits, a dash and 4 digits. **/
+        function fieldsvalid(elem, elem2) {
+            var Expression = /^[A-Za-z]+$/;
+            if(elem.value.match(Expression)){
+                var Expression2 = /^[(][0-9][0-9][0-9][)] [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]$/;
+                if(elem2.value.match(Expression2)) {
+                    return true;
+                } else {
+                    alert("Phone number must be in exchange number format");
+                    elem2.focus();
+                    return false;
+                }
+            } else {
+                alert("Name must be only letters");
+                elem.focus();
+                return false;
+            }
+        }
+
+/** QUESTION 1 TRANSFORM:  Write a JavaScript function to transform the phone number into the area code- exchange-number format like 416-555-5555. **/
+
+        function transformPhone(val) {
+            val = val.value;
+            val = val.replaceAll("(", '');
+            val = val.replaceAll(")", '');
+            val = val.replaceAll(' ', '-');
+            return val;
+        }
+
+/**QUESTION 1: Write a JavaScript function to display the name, address and phone number (with the new format) with large characters and an attractive appearance. Be creative!**/
+        function displayQ1output(elem, elem1, elem2) {
+$('#c').css('visibility', 'hidden'); 
+            if(fieldsvalid(elem, elem1)){
+            var newp = transformPhone(elem1);
+            document.getElementById("c").innerHTML = "<h4> Name: " +  elem.value +  "<br>"+ "Phone: " + transformPhone(elem1) +  "<br>"+"Address: " + elem2.value +"</h4>";
+$('#c').css('visibility', 'visible'); 
+}
+
+        }
+
+    </script>
+    <title>Lab05 CPS530</title>
+    <style>
+ .count-label {
+            margin-top: 10px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh; /* Ensure body is at least full height */
+            display: flex; /* using the flex box model, for responsive layout */
+            flex-direction: column; /* stack cols vertically */
+        }
+
+        div.c {
+	visibility: hidden;           
+	 width: 300px; 
+	height:130px;
+            padding: 10px; 
+            border: 12px groove #cc1100; 
+            border-radius: 50px; 
+            margin: 10px; 
+            box-sizing: content-box;
+        }
+
+        #q3image {
+            width: 100px; /* Start size */
+            height: 100px; /* Start size */
+            position: absolute; 
+            top: 50%; /* center vertically and horizontally below */
+            left: 50%;
+            transform: translate(-50%, -50%); /* also ensures item is centered */
+            transition: width 2s, height 2s; /* Smooth transition */
+        }
+
+        #zoompng {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* center vertically and horizontally below */
+            z-index: 10; /* Ensure it is above the image */
+            cursor: pointer; /* Pointer cursor for better UX */
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div class="container mt-4 content">
+        <img src="zoomout.png" id="zoompng" name="zoompng">
+      
+        <h6>Q1: </h6>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-8">
+	<!--Create a form that asks the user for their name, address and phone number. For the phone number use the (area code) exchange-number (416) 555-5555 format.-->
+                    <form>
+                        <div class="col">
+                            <h6 class="name-label">Name: <input id="name" name="name" required></h6>
+                        </div>
+                        <div class="col">
+                            <h6 class="address-label">Address: <input id="address" name="address" required></h6>
+                        </div>
+                        <div class="col">
+                            <h6 class="phone-label">Phone: ( (416) 555-5555 format) <input id="phone" name="phone" required></h6>
+                        </div>
+		<!--Create a button that will validate the form and produce the final display. Use the DOM only, you cannot refresh the page or use a server-side program to produce the final display.-->
+                        <input type="button" onclick="displayQ1output(document.getElementById('name'), document.getElementById('phone'), document.getElementById('address'))" value="Check Field">
+                        <div id="out"></div>
+                    </form>
+                </div>
+                <div class="col-4">
+                    <div class="c" id="c"></div>
+                </div>
+            </div>
+<br><br>
+<!--Write a JavaScript function that counts in real time the number of characters in a <textarea> form element. Have the number updated in real time and shown in large font next to the input form element. Create a second function that counts only the letters (A-Z and a-z) and display that count as well next to the input form.
+--><br>
+            <h6>Q2: Count Characters/Letters</h6>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col">
+                        <label for="qcount" class="form-label">Enter text:</label>
+                        <textarea id="qcount" name="qcount" rows="4" class="form-control"></textarea>
+                    </div>
+                    <div class="col">
+                        <h3 class="count-label">CharCount: <span id="charcount"></span></h3>
+                    </div>
+                    <div class="col">
+                        <h3 class="count-label">A-Z Count: <span id="azcount"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h6>Q3: Zoom in/Zoom out Image, click on image in the center of the page</h6>
+            <div class="row">
+                <img id="q3image" name="q3image" src="backg.png"> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

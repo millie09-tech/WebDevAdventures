@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google imported font -->
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap" rel="stylesheet">
+
+<!-- To match the other page in many aspects, custom formatting had to be done -->
+  <style>
+    h2#first_tag {
+      font-family: "Edu AU VIC WA NT Guides", cursive;
+      font-weight: 700;
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    .header {
+      background-color: #9933cc;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+
+    footer {
+      padding: 10px;
+      background-color: #f1f1f1;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .c {
+      border: 12px groove #cc1100;
+      border-radius: 50px;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .custom-img {
+      max-width: 80%; /* Set a maximum width */
+      height: auto; /* Keep the aspect ratio */
+      display: block;
+      margin: 0 auto; /* Center the image */
+    }
+
+    table.table-custom {
+      width: 100%;
+      text-align: center;
+      background-color: red;
+      color: white;
+    }
+
+    table.table-custom th, table.table-custom td {
+      padding: 20px;
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+  </style>
+</head>
+<body>
+<!-- Container class to encompass everything, margin top is 4px -->
+  <div class="container mt-4">
+
+  <div class="header text-center">
+    <h2 id="first_tag">MILLIE PORTUGAL INFO</h2>
+  </div>
+
+
+<!-- Everything is encompassed in a row with columns-->
+    <div class="row">
+<!--  screens less than 992px, you stack  for this nav bar-->
+      <div class="col-md-3">
+
+<!-- used to create vertical navigation menu -->
+        <ul class="nav flex-column">
+          <ul>
+      <li><a href="#summ">Summary of Portugal</a></li>
+      <li><a href="#im">Pictures of Portugal</a></li>
+      <li><a href="#fact">Portugal Facts</a></li>
+      <li><a href="#pageinfo">Page Info/Sources</a></li>
+    </ul>
+        </ul>
+      </div>
+<!--  screens less than 992px, you stack  for this nav bar-->
+<!-- add light background color and padding -->
+
+      <div class="col-md-9 bg-light p-3" id="summ">
+        <h1>Summary of Portugal</h1>
+        <p>Portugal is a country located in Southern Europe. It was founded in 1143. Its capital is Lisbon and the language spoken there is Portuguese. The fact that it is on the Atlantic Ocean influenced many aspects including its culture, food, etc. For example, a main food source is fish. Economically, at its peak, it was the richest country but in the 19th/20th century, it had a downfall. Portugal is now one of the poorest. Although, it is still a known place for tourists to visit, and is also famous for its football/soccer team.</p>
+      </div>
+    </div>
+
+
+    <div class="row mt-4" id="im">
+      <div class="col-md-6">
+        <img src="portugal1.png" class="img-fluid custom-img" alt="Portugal Image 1">
+      </div>
+      <div class="col-md-6">
+        <img src="portugal3.png" class="img-fluid custom-img" alt="Portugal Image 2">
+      </div>
+    </div>
+
+<!-- margin top and a responsive table -->
+    <div class="table-responsive mt-4" id="fact">
+<!--  create a border on the table and also use the custom table class -->
+      <table class="table table-bordered table-custom">
+        <tbody>
+          <tr>
+            <td>Portugal is the most western point in Europe!</td>
+          </tr>
+          <tr>
+            <td>More than 8 different countries speak Portugal's language!</td>
+          </tr>
+          <tr>
+            <td>Portugal is known for its fine wine!</td>
+          </tr>
+          <tr>
+            <td>Its population is more than 10 million!</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="c text-center mt-4" id="pageinfo">
+      <h4>Page Info</h4>
+      <p><mark>This page was written on Oct 5, 2024</mark></p>
+      <p>It was written for the course CPS530</p>
+    </div>
+  </div>
+
+  <footer>
+    <span id="copyright">Copyright Millie Majithia | mmajithia@torontomu.ca</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

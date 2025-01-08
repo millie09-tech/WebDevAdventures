@@ -1,0 +1,86 @@
+/*Google imported font */
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Guides:wght@400..700&display=swap');
+
+body {background-color: #D3D3D3;}
+
+/*Use of calling an element through ID  and using Google Font*/
+h2#first_tag{
+  font-family: "Edu AU VIC WA NT Guides", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-size:32px;
+  color:#660066;
+}
+/* Use of calling an element through a class and using the box model (content-box which is the default)*/
+div.c {
+  width:300px; 
+  padding:10px; 
+  border:12px groove #cc1100; 
+  border-radius:50px; 
+  margin:10px; 
+  box-sizing:content-box;}
+  
+/*Use of float with different firstbox elements */
+div.firstbox {
+  float: left;
+  border: 10px dotted;
+  width: 20%;
+  height 20%;
+  padding: 10px
+}
+
+/*Use of a pseudoclass (get the first h2 of firstbox will be blue)*/
+.firstbox:first-child h2 {
+    color: blue; 
+}
+
+/*Use of hover and opacity (when you hover over the image, the opacity changes)*/
+img.millie:hover {opacity: 0.8;}
+
+/*Use of a pseudoelements ::after, is known as the clearfix hack, it is able to allow no overlapping and contain the floating elements*/
+.clearfix::after {
+    content: ""; /*after the clearfix, content should be ""*/
+    clear: both; /*Pushed below right/left floated elements */
+    display: table; /*uses  a table format */
+}
+/*The direct children (css combinator) of article will have a background color of green */
+article > p {background-color: green}
+
+/* all a elements will have a margin of 50px */
+a {margin: 50px;}
+
+/*Another use of hover, "a" nav elements will have padding 10px and color green  if you hover*/
+a:hover {background-color: green; padding:10px;}
+
+/*Setting footer color */
+footer#footer{background-color: #cfffcf}
+
+/*Use of pseudoelement ::before to set ** before copyright */
+span#copyright::before{content:"**"}
+
+
+/*Showing an element as inline (doesn’t start on a new line and only occupy just the width it requires )*/
+p#h{display:inline}
+
+/*When you click on it, the page renders as if the element does not exist */
+p#h:active{display:none}
+
+/*Setting 4 states of an animation using keyframes */
+@keyframes one {
+  0%   {background-color: red; border: 2px dotted blue ;}
+  25%  {background-color: yellow; border: 2px dotted green;}
+  50%  {background-color: blue; border: 2px dotted red;} 
+  100% {background-color: green; border: 2px dotted yellow;}
+}
+
+/*Set the animation for this element */
+div.look{
+animation-name: one;
+animation-duration:8s;
+animation-iteration-count:infinite;
+background-color:grey;
+  width: 100px;
+  height: 50px;
+
+}

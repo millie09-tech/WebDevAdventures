@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.nav li {
+  padding: 10px;
+  background-color: #33b5e5;
+  color: #ffffff;
+}
+
+.nav li:hover {
+  background-color: #0099cc;
+}
+
+img {max-width: 100%; height:auto;}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  [class*="col-"] {
+  width: 100%;
+}
+
+#fac1{
+ background-color: #00ffab
+}
+
+#fac2{
+ background-color: #00ffab
+}
+
+#fac3{
+ background-color: #00ffab
+}
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ [class*="col-"] {
+  width: 100%;
+}
+
+
+div.c {
+  width:100%; 
+  padding:10px; 
+  border:12px groove #cc1100; 
+  border-radius:50px; 
+  margin:10px; 
+ 
+}
+
+#fac1{
+ background-color: #bed6c5
+}
+
+#fac2{
+ background-color: #bed6c5
+}
+
+#fac3{
+ background-color: #bed6c5
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 25%;
+  text-align: center;
+  font-size: 25px;
+}
+
+div.c {
+  width:100%; 
+  padding:10px; 
+  border:12px groove #11cc00; 
+  border-radius:50px; 
+  margin:10px; 
+ 
+}
+
+#fac1{
+ background-color: #F7CAC9
+}
+
+#fac2{
+ background-color: #F7CAC9
+}
+
+#fac3{
+ background-color: #F7CAC9
+}
+} 
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 25%;
+  text-align: center;
+  font-size: 32px;
+}
+
+div.c {
+  width:100%; 
+  padding:10px; 
+  border:12px groove #0011cc; 
+  border-radius:50px; 
+  margin:10px; 
+ 
+}
+
+#fac1{
+ background-color: #aaa
+}
+
+#fac2{
+ background-color: #bbb
+}
+
+#fac3{
+ background-color: #ccc
+}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 25%;
+  text-align: center;
+  font-size: 32px;
+}
+
+div.c {
+  width:100%; 
+  padding:10px; 
+  border:12px groove #0011cc; 
+  border-radius:50px; 
+  margin:10px; 
+ 
+}
+
+#fac1{
+ background-color: #aaa
+}
+
+#fac2{
+ background-color: #bbb
+}
+
+#fac3{
+ background-color: #ccc
+}
+}
+
+</style>
+</head>
+<body>
+<div class="header">
+  <h2 id="first_tag">MILLIE PORTUGAL INFO</h2>
+</div>
+
+<div class="row">
+  <div class="col-3 nav">
+    <ul>
+      <li><a href="#summ">Summary of Portugal</a></li>
+      <li><a href="#im">Pictures of Portugal</a></li>
+      <li><a href="#fact">Portugal Facts</a></li>
+      <li><a href="#pageinfo">Page Info/Sources</a></li>
+    </ul>
+  </div>
+
+  <div class="col-9" style="background-color: #cccccc" id="summ">
+    <h1>Summary of Portugal</h1>
+    <p>Portugal is a country located in Southern Europe. It was founded in 1143. It's capital is Lisbon and the language spoken there is Portuguese. The fact that is it on the Atlantic Ocean influenced any aspects including its culture, food etc... For example, a main food source is fish. Economically at its peak it was the richest country but in the 19th/20th century it had a downfall. Portugal is now one of the poorest. Although, it is still a known place for tourists to come see, and is also known for its football/soccer team. </p>
+  </div>
+
+</div>
+
+<br><br>
+<div class="row" id="im">
+  <div class="col-6" style="background-color: #cccccc; padding-bottom: 70px">
+<img src="portugal1.png">
+</div>
+
+  <div class="col-6" style="background-color: #cccccc">
+<img src="portugal3.png">
+
+</div>
+
+</div>
+
+<br><br>
+
+<div class="row" id="fact">
+  <div id="fac1" class="column" >
+    <h2>Fact 1</h2>
+    <p>Portugal is the most west point in Europe!</p>
+  </div>
+  <div id="fac2" class="column" >
+    <h2>Fact 2</h2>
+    <p>More than 8 different countries speak Portugal's language!</p>
+  </div>
+  <div id="fac3" class="column" >
+    <h2>Fact 3</h2>
+    <p>Its population is more than 10 million!.</p>
+  </div>
+</div>
+
+<div class="row c">
+
+<article id="pageinfo" >
+	<h4> Page Info </h4>
+	<p> This page was written on Oct 5, 2024 </p>
+	<p> It was written for the course of CPS530 </p>
+</article>
+<br><br><br>
+</div>
+
+
+<footer id="footer">
+	<span id="copyright">Copyright Millie Majithia | mmajithia@torontomu.ca</span>
+</footer>
+
+</body>
+</html>
+

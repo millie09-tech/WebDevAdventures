@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300">
+
+<polygon points="10,200 150,200 78,70" style="fill:#feff5b; stroke:black; stroke-width:2"></polygon>
+<text x="50" y="220" style="fill:black; font-size:20px;" >Triangle</text>
+
+<polygon points="190,200 190,70 320,70 320,200" fill-rule="nonzero" style="fill:#74c3d7; stroke:black; stroke-width:2"></polygon>
+<text x="200" y="225" style="fill:black; font-size:20px;" >Quadrilateral</text>
+
+<polygon points="400,200 500,200 520,120 450,60 380,120 " style="fill:#ffc1ab; stroke:black; stroke-width:2"></polygon>
+<text x="410" y="225" style="fill:black; font-size:20px;" >Pentagon</text>
+
+<polygon points="620,210 680,170 680,110 620,70 560,110 560,170" style="fill:#84d7a6; stroke:black; stroke-width:2"></polygon>
+<text x="580" y="230" style="fill:black; font-size:20px;" >Hexagon</text>
+
+
+
+
+</svg>
